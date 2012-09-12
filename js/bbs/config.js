@@ -8,8 +8,11 @@ var bbs_max_post_count = 999;
 var bbs_session_cookie = 'bbs_session';
 var bbs_error_session = 'SESSION_ERROR';
 
-var website_address = location.origin + location.pathname;
-website_address = website_address.substr(0, website_address.length - 1);
+var website_address = location.origin;
+var path = location.pathname.split('/');
+for (var i = 1; i < path.length - 1; i++) {
+	website_address += '/' + path[i];
+}
 
 var bbs_info = {
 	title : '9# BBS - Rowell ',
