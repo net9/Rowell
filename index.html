@@ -38,7 +38,7 @@
           </div>
           <div class='nav-collapse'>
             <ul class='nav'>
-              <li><a data-toggle='modal' href='#login-panel'>登录</a></li>
+              <li><a id='login-path'>登录</a></li>
             </ul>
           </div>
         </div>
@@ -77,24 +77,6 @@
 	      </div>
 	    </div>
     </div>
-    
-    <!-- Login window -->
-    <div class='modal hide' id='login-panel'>
-    	<div class='modal-header'>
-    		<button type='button' class='close' data-dismiss='modal'>&times;</button>
-    		<h3>登录</h3>
-    	</div>
-    	<div class='modal-body'>
-    		<p>点击<a href='' id='login-path' target='_blank'>此处</a>获取登录码。</p>
-    		<form action='' method='get'>
-		 	 		输入登录码： <input type='text' name='auth-code' id='auth-code-textbox' />
-				</form>
-    	</div>
-    	<div class='modal-footer'>
-    		<a class='btn btn-primary' id='login-button' data-dismiss='modal'>登录</a>
-    		<a class='btn' data-dismiss='modal'>关闭</a>
-  		</div>
-  	</div>
     
     <!-- Main part of unlogged-in panel -->
     <div class='container' id='unlogged-panel'>
@@ -418,13 +400,13 @@
     <script src='./js/bbs/bbs_utility.js'></script>
     
     <script type='text/javascript'>
-			$(document).ready(function(){
-				UI_register_func();
-				UI_register_hotkeys();
-				UI_set_fileupload();
-				UI_init();
-				UI_session_retrieved($.cookie(bbs_session_cookie));
-			});							
+		$(function(){
+			UI_register_func();
+			UI_register_hotkeys();
+			UI_set_fileupload();
+			UI_init();
+			UI_session_retrieved($.cookie(bbs_session_cookie));
+		});
     </script>
   </body>
 </html>

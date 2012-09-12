@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+	</head>
+	<body>
+		<div id="information"></div>
+		<script src='./js/jquery/jquery.min.js'></script>
+		<script src='./js/jquery/jquery.cookie.js'></script>
+		<script src='./js/bbs/config.js'></script>
+		<script src='./js/bbs/common.js'></script>
+		<script src='./js/bbs/bbs_login.js'></script>
+		<script type='text/javascript'>
+		$(function(){
+			var query = getQueryString();
+			if (query.code) {
+				getSession(query.code, function (session) {
+					verifySession(session, true, function (result) {
+						if (result) {
+							location.href = website_address;
+						} else {
+							displayError();
+						}
+					});
+				});
+			}
+			if (query.error) {
+				displayError();
+			}
+		});
+		function displayError() {
+			$('#information').html('<h1>登录失败，请返回重试。</h1>');
+		}
+		</script>
+	</body>
+</html>

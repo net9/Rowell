@@ -1,19 +1,13 @@
 ﻿var bbs_loading_show = false;
 
 function UI_register_func(){
-	$('#login-button').click(function(){
-		var auth_code = $('input#auth-code-textbox').val();
-		UI_show_backdrop();
-		getSession(auth_code, UI_session_retrieved);
-	});
-	    	
 	$('#logout-button').click(UI_logout);
 	
 	$(document).on('click', '#favboard-nav-label', function(){
 		UI_set_loading();
 		view_boardlist(bbs_type.entry.favboard, -1, '', UI_update, 0);
 	});
-	    	
+	
 	$(document).on('click', '#allboard-nav-label', function(){
 		UI_set_loading();
 		view_boardlist(bbs_type.entry.allboard, -1, '', UI_update, 0);
