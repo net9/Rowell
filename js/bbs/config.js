@@ -8,6 +8,9 @@ var bbs_max_post_count = 999;
 var bbs_session_cookie = 'bbs_session';
 var bbs_error_session = 'SESSION_ERROR';
 
+var website_address = location.origin + location.pathname;
+website_address = website_address.substr(0, website_address.length - 1);
+
 var bbs_info = {
 	title : '9# BBS - Rowell ',
 	version : '0.2.4',
@@ -43,7 +46,7 @@ var bbs_query = {
 	}
 };
 
-bbs_query.auth.auth += '?redirect_uri=' + encodeURIComponent(location.origin + '/login.html');
+bbs_query.auth.auth += '?redirect_uri=' + encodeURIComponent(website_address + '/login.html');
 bbs_query.auth.auth += '&response_type=code&client_id=' + bbs_query.client_id;
 
 var bbs_type = {
