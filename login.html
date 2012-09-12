@@ -17,7 +17,7 @@
 				getSession(query.code, function (session) {
 					verifySession(session, true, function (result) {
 						if (result) {
-							location.href = website_address;
+							location.href = location.origin + '/';
 						} else {
 							displayError();
 						}

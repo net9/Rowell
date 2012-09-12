@@ -1,6 +1,4 @@
-﻿var website_address = 'http://localhost';
-
-var bbs_favboard_name = '收藏夹';
+﻿var bbs_favboard_name = '收藏夹';
 var bbs_allboard_name = '所有版面';
 
 var bbs_max_board_count = 9999;
@@ -45,7 +43,7 @@ var bbs_query = {
 	}
 };
 
-bbs_query.auth.auth += '?redirect_uri=' + encodeURIComponent(website_address + '/login.html');
+bbs_query.auth.auth += '?redirect_uri=' + encodeURIComponent(location.origin + '/login.html');
 bbs_query.auth.auth += '&response_type=code&client_id=' + bbs_query.client_id;
 
 var bbs_type = {
