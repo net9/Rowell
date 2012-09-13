@@ -5,6 +5,7 @@ var bbs_max_board_count = 9999;
 var bbs_post_count = 20;
 var bbs_max_post_count = 999;
 
+var accounts9_session_cookie = 'accounts9_session';
 var bbs_session_cookie = 'bbs_session';
 var bbs_error_session = 'SESSION_ERROR';
 
@@ -21,6 +22,19 @@ var bbs_info = {
 };
 
 bbs_info.send_source += bbs_info.version + ']';
+
+var accounts9 = {
+	server: 'https://accounts.net9.org',
+	client_id: 'FYDBDkj2417_TIEuhcf5Juxi3h0',
+	client_secret: 'QUwkDZHgShInZ8YRG6Po',
+	auth: '/api/authorize',
+	access_token: '/api/access_token',
+	userinfo: '/api/userinfo',
+	bbsuserinfo: '/api/bbsuserinfo',
+};
+
+accounts9.auth += '?redirect_uri=' + encodeURIComponent(website_address + '/login_accounts9.html');
+accounts9.auth += '&client_id=' + accounts9.client_id;
 
 var bbs_query = {
 	server 				:			'https://bbs.net9.org:8080',

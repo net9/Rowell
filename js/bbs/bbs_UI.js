@@ -1,6 +1,11 @@
 ﻿var bbs_loading_show = false;
 
 function UI_register_func(){
+	$('#login-other-method-button').click(function () {
+		$('#login-other-method').toggle();
+		return false;
+	});
+	
 	$('#logout-button').click(UI_logout);
 	
 	$(document).on('click', '#favboard-nav-label', function(){
@@ -271,8 +276,12 @@ function UI_session_retrieved(session){
     	
 function UI_init() {
 	UI_show_backdrop();
-    		
-	$('a#login-path').attr('href',bbs_query.server + bbs_query.auth.auth);
+	
+	$('a#login-accounts9').attr('href', accounts9.server + accounts9.auth);
+	$('a#login-net9-bbs').attr('href', bbs_query.server + bbs_query.auth.auth);
+	$('a#login-net9-bbs').click(function () {
+		return confirm('你确定使用酒井ID登录本站吗？直接使用酒井ID登录将无法使用本站的所有功能，建议使用Accounts9登录。');
+	});
 	$(document).attr("title", bbs_info.title + 'v' + bbs_info.version);
     		
 	$('.unimplemented').popover({
