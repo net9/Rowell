@@ -27,6 +27,7 @@ var accounts9 = {
 	server: 'https://accounts.net9.org',
 	client_id: 'FYDBDkj2417_TIEuhcf5Juxi3h0',
 	client_secret: 'QUwkDZHgShInZ8YRG6Po',
+	connect: '/bbs/connect',
 	auth: '/api/authorize',
 	access_token: '/api/access_token',
 	userinfo: '/api/userinfo',

@@ -20,6 +20,9 @@
           $.cookie(accounts9_session_cookie, accessToken, {expires: 14});
           Accounts9.getBBSUser(accessToken, function (err, bbsUser) {
             if (err) return displayError(err);
+            if (!bbsUser) {
+              location.href = accounts9.server + accounts9.connect;
+            }
             setSessionCookie(bbsUser.accessToken, true);
             location.href = website_address;
           });
