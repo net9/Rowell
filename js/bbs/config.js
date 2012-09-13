@@ -16,7 +16,7 @@ for (var i = 1; i < path.length - 1; i++) {
 }
 
 var bbs_info = {
-	title : '9# BBS - Rowell ',
+	title : 'Rowell ',
 	version : '0.2.4',
 	send_source : '[Sent from Rowell v'
 };
